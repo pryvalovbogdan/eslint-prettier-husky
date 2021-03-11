@@ -2,7 +2,7 @@
 {
   "extends": [
 //    "airbnb",
-    "plugin:prettier/recommended",
+    "plugin:prettier/recommended"
 //    "prettier/babel",
 //    "prettier/react",
 //    "prettier/standard"
@@ -36,8 +36,8 @@
   // 1 - turn the rule on as a warning (doesn’t affect exit code)
   // 2 - turn the rule on as an error (exit code will be 1)
   "rules": {
-//    "prettier/prettier": [
-//      "error",
+    "prettier/prettier": [
+      "error"
 //      {
 //        "bracketSpacing": true,
 //        "jsxBracketSameLine": false,
@@ -50,7 +50,7 @@
 //        "useTabs": false,
 //        "endOfLine": "lf"
 //      }
-//    ],
+    ],
     // The following rules point out areas where you might have made mistakes.
     "comma-dangle": ["error", "always-multiline", {"functions": "never"}], // require or disallow trailing commas (требовать или запрещать запятые)
     "no-cond-assign": 2, // disallow assignment operators in conditional expressions (запретить операции присваивания в условных выражениях)
