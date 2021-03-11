@@ -5,9 +5,12 @@ export const Layout = memo((props) => {
   const some = props?.sone;
   return (
     <Wrapper>
-      <Title>Layout</Title>
+      <Title>
+        Layout
+      </Title>
       {some}
-      <GlobalStyles />
+      <GlobalStyles
+      />
     </Wrapper>
   );
 });
