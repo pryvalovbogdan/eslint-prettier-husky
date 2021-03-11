@@ -1,17 +1,13 @@
 // https://eslint.org/demo
 {
   "extends": [
-//    "airbnb",
+    //    "airbnb",
     "plugin:prettier/recommended"
-//    "prettier/babel",
-//    "prettier/react",
-//    "prettier/standard"
+    //    "prettier/babel",
+    //    "prettier/react",
+    //    "prettier/standard"
   ],
-  "plugins": [
-    "react",
-    "prettier",
-    "react-hooks"
-  ],
+  "plugins": ["react", "prettier", "react-hooks"],
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
@@ -36,22 +32,21 @@
   // 1 - turn the rule on as a warning (doesn’t affect exit code)
   // 2 - turn the rule on as an error (exit code will be 1)
   "rules": {
-    "prettier/prettier": "error"
-//      {
-//        "bracketSpacing": true,
-//        "jsxBracketSameLine": false,
-//        "jsxSingleQuote": false,
-//        "printWidth": 100,
-//        "semi": true,
-//        "singleQuote": true,
-//        "tabWidth": 2,
-//        "trailingComma": "all",
-//        "useTabs": false,
-//        "endOfLine": "lf"
-//      }
-    ,
+    "prettier/prettier": "error",
+    //      {
+    //        "bracketSpacing": true,
+    //        "jsxBracketSameLine": false,
+    //        "jsxSingleQuote": false,
+    //        "printWidth": 100,
+    //        "semi": true,
+    //        "singleQuote": true,
+    //        "tabWidth": 2,
+    //        "trailingComma": "all",
+    //        "useTabs": false,
+    //        "endOfLine": "lf"
+    //      }
     // The following rules point out areas where you might have made mistakes.
-    "comma-dangle": ["error", "always-multiline", {"functions": "never"}], // require or disallow trailing commas (требовать или запрещать запятые)
+    //    "comma-dangle": ["error", "always-multiline", {"functions": "never"}], // require or disallow trailing commas (требовать или запрещать запятые)
     "no-cond-assign": 2, // disallow assignment operators in conditional expressions (запретить операции присваивания в условных выражениях)
     "no-console": ["error", { "allow": ["info", "warn", "error"] }],
     "no-constant-condition": 2, // disallow constant expressions in conditions (запретить постоянные выражения в условиях)
@@ -127,7 +122,7 @@
     "no-throw-literal": 2, // disallow throwing literals as exceptions (запретить бросать литералы в качестве исключений)
     "no-unused-expressions": [1, { "allowShortCircuit": true }], // disallow unused expressions (запретить неиспользуемые выражения)
     "no-void": 0, // disallow "void" operators (запретить "void" операторы)
-    "no-warning-comments": [0, {"terms": ["todo", "fixme", "xxx"], "location": "start"}], // disallow specified warning terms in comments (отключить определенные условия предупреждения в комментариях)
+    "no-warning-comments": [0, { "terms": ["todo", "fixme", "xxx"], "location": "start" }], // disallow specified warning terms in comments (отключить определенные условия предупреждения в комментариях)
     "no-with": 2, // disallow "with" statements ( запретить "with" выражения)
     "radix": 1, // enforce the consistent use of the radix argument when using "parseInt()" (обеспечить последовательное использование аргумента radix при использовании "parseInt ()")
     "vars-on-top": 2, // require "var" declarations be placed at the top of their containing scope (требуование, чтобы объявления «var» размещались в верхней части их области)
@@ -153,22 +148,28 @@
     // "indent": [1, 4], // enforce consistent indentation (обеспечивать постоянный отступ)
     "brace-style": ["error", "1tbs"], // enforce consistent brace style for blocks (применять согласованный стиль фигурной скобки для блоков)
     "camelcase": 0, // enforce "camelcase" naming convention (обеспечить соблюдение правил именования "camelcase")
-    "comma-spacing": [2, {"before": false, "after": true}], // enforce consistent spacing before and after commas (обеспечить согласованное расстояние до и после запятой)
+    "comma-spacing": [2, { "before": false, "after": true }], // enforce consistent spacing before and after commas (обеспечить согласованное расстояние до и после запятой)
     "comma-style": [2, "last"], // enforce consistent comma style (использовать последовательный стиль запятой)
     "consistent-this": [1, "_this"], // enforce consistent naming when capturing the current execution context (принудительное согласование имен при захвате текущего контекста выполнения)
     "eol-last": 0, // enforce at least one newline at the end of files (принудительно по крайней мере одна новая строка в конце файлов)
     "func-names": 0, // require or disallow named function expressions (требовать или запрещать именованные функциональные выражения)
     "func-style": 0, // enforce the consistent use of either function declarations or expressions (обеспечить последовательное использование объявлений или выражений функции)
-    "key-spacing": [2, {"singleLine": {"beforeColon": false, "afterColon": true}, "multiLine": {"beforeColon": false, "afterColon": true}}], // enforce consistent spacing between keys and values in object literal properties (обеспечить согласованное расстояние между ключами и значениями в свойствах объектного литерала)
+    "key-spacing": [
+      2,
+      {
+        "singleLine": { "beforeColon": false, "afterColon": true },
+        "multiLine": { "beforeColon": false, "afterColon": true }
+      }
+    ], // enforce consistent spacing between keys and values in object literal properties (обеспечить согласованное расстояние между ключами и значениями в свойствах объектного литерала)
     "max-nested-callbacks": [1, 3], // enforce a maximum depth that callbacks can be nested (обеспечить максимальную глубину, чтобы обратные вызовы могли быть вложены)
-    "new-cap": [2, {"newIsCap": true, "capIsNew": false}], // require constructor function names to begin with a capital letter (требование, чтобы имена функций конструктора начинались с заглавной буквы)
+    "new-cap": [2, { "newIsCap": true, "capIsNew": false }], // require constructor function names to begin with a capital letter (требование, чтобы имена функций конструктора начинались с заглавной буквы)
     "new-parens": 2, // require parentheses when invoking a constructor with no arguments (требование, чтобы при вызове конструктора без аргументов)
     "newline-after-var": 0, // require or disallow an empty line after var declarations (требовать или запрещать пустую строку после объявлений var)
     "no-array-constructor": 1, // disallow Array constructors (запретить конструкторы массива)
     "no-inline-comments": 0, // disallow inline comments after code (запретить встроенные комментарии после кода)
     "no-lonely-if": 1, // disallow if statements as the only statement in else blocks (запретить, если операторы как единственный оператор в блоках else)
     "no-mixed-spaces-and-tabs": 0, // disallow mixed spaces and tabs for indentation (запретить смешанные пробелы и вкладки для отступов)
-    "no-multiple-empty-lines": [1, {"max": 1}], // disallow multiple empty lines (запретить несколько пустых строк)
+    "no-multiple-empty-lines": [1, { "max": 1 }], // disallow multiple empty lines (запретить несколько пустых строк)
     "no-nested-ternary": 1, // disallow nested ternary expressions (запретить вложенные тернарные выражения)
     "no-spaced-func": 1, // disallow space between function identifiers and their applications - deprecated (запретить пространство между идентификаторами функций и их приложениями - устарел)
     "no-ternary": 0, // disallow ternary operators (запретить тернарные операторы)
@@ -178,30 +179,47 @@
     "operator-assignment": [1, "always"], // require or disallow assignment operator shorthand where possible (требовать или запрещать сокращение оператора, где это возможно)
     "padded-blocks": [1, "never"], // require or disallow padding within blocks (требовать или запрещать заполнение в блоках)
     "quote-props": [1, "as-needed"], // require quotes around object literal property names (требование кавычек вокруг имен свойств объекта объекта)
-    "quotes": [1, "single", {"allowTemplateLiterals": true}], // enforce the consistent use of either backticks, double, or single quotes (обеспечить последовательное использование либо обратных, двойных, либо одинарных кавычек)
+    "quotes": [1, "single", { "allowTemplateLiterals": true }], // enforce the consistent use of either backticks, double, or single quotes (обеспечить последовательное использование либо обратных, двойных, либо одинарных кавычек)
     "semi": [2, "always"], // require or disallow semicolons instead of ASI (требовать или запрещать точки с запятой вместо ASI)
-    "semi-spacing": [2, {"before": false, "after": true}], // enforce consistent spacing before and after semicolons (обеспечивать согласованное расстояние до и после с запятой)
+    "semi-spacing": [2, { "before": false, "after": true }], // enforce consistent spacing before and after semicolons (обеспечивать согласованное расстояние до и после с запятой)
     "sort-vars": 0, // require variables within the same declaration block to be sorted (требуют, чтобы переменные в пределах одного блока объявлений были отсортированы)
     // "space-after-keywords": "off", // require a space after certain keywords (unknown)
-    "keyword-spacing": [2, {"before": true, "after": true}], // enforce consistent spacing before and after keywords (обеспечить согласованное расстояние до и после ключевых слов)
+    "keyword-spacing": [2, { "before": true, "after": true }], // enforce consistent spacing before and after keywords (обеспечить согласованное расстояние до и после ключевых слов)
     "space-before-blocks": [1, "always"], // enforce consistent spacing before blocks (обеспечить согласованное расстояние до блоков)
-    "space-before-function-paren": [1, {"anonymous": "always", "named": "never"}], // enforce consistent spacing before function definition opening parenthesis (обеспечить согласованный интервал перед открытием вскрытия функции)
+    "space-before-function-paren": [1, { "anonymous": "always", "named": "never" }], // enforce consistent spacing before function definition opening parenthesis (обеспечить согласованный интервал перед открытием вскрытия функции)
     "object-curly-spacing": ["error", "always"], // enforce consistent spacing inside braces (обеспечить согласованное расстояние между фигурными скобками)
     "array-bracket-spacing": [0, "always"], // enforce consistent spacing inside array brackets (обеспечить согласованное расстояние между скобками массива)
     "space-in-parens": [1, "never"], // enforce consistent spacing inside parentheses (обеспечить согласованное расстояние между круглыми скобками)
-    "space-infix-ops": [2, {"int32Hint": false}], // require spacing around operators (требуется расстояние между операторами)
-    "space-unary-ops": [1, {"words": true, "nonwords": false}], // enforce consistent spacing before or after unary operators (обеспечить согласованное расстояние до или после унарных операторов)
+    "space-infix-ops": [2, { "int32Hint": false }], // require spacing around operators (требуется расстояние между операторами)
+    "space-unary-ops": [1, { "words": true, "nonwords": false }], // enforce consistent spacing before or after unary operators (обеспечить согласованное расстояние до или после унарных операторов)
     "spaced-comment": [0, "always"], // enforce consistent spacing after the // or /* in a comment (обеспечить согласованное расстояние после // или /* в комментарии)
     "wrap-regex": 2, // require parenthesis around regex literals (требование скобок вокруг регулярных выражений)
 
     // These rules are only relevant to ES6 environments and are off by default.
     "no-var": 2, // require let or const instead of var (требование let или const вместо var)
-    "generator-star-spacing": ["error", {"before": false, "after": true, "anonymous": "neither", "method": {"before": true, "after": true}}], // enforce consistent spacing around * operators in generator functions (обеспечить согласованное расстояние вокруг операторов * в функциях генератора)
+    "generator-star-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true,
+        "anonymous": "neither",
+        "method": { "before": true, "after": true }
+      }
+    ], // enforce consistent spacing around * operators in generator functions (обеспечить согласованное расстояние вокруг операторов * в функциях генератора)
 
     // The following rules are included for compatibility with JSHint and JSLint.
     // While the names of the rules may not match up with the JSHint/JSLint counterpart, the functionality is the same.
     "max-depth": [1, 4], // enforce a maximum depth that blocks can be nested (обеспечить максимальную глубину, которая может быть вложенной)
-    "max-len": [1, { "code": 150, "tabWidth": 2, "ignoreUrls": true, "ignoreTrailingComments": true, "ignoreComments": true }], // enforce a maximum line length (обеспечить максимальную длину линии)
+    "max-len": [
+      1,
+      {
+        "code": 150,
+        "tabWidth": 2,
+        "ignoreUrls": true,
+        "ignoreTrailingComments": true,
+        "ignoreComments": true
+      }
+    ], // enforce a maximum line length (обеспечить максимальную длину линии)
     "max-params": [1, 5], // enforce a maximum number of parameters in function definitions (обеспечить максимальное количество параметров в определениях функций)
     "max-statements": 0, // enforce a maximum number of statements allowed in function blocks (обеспечить максимальное количество утверждений, разрешенных в функциональных блоках)
     "no-bitwise": [1, { "int32Hint": true, "allow": ["~"] }], // disallow bitwise operators (запретить побитовые операторы)
@@ -248,7 +266,7 @@
     "no-useless-return": 0, // disallow redundant return statements (запретить избыточные операторы возврата)
     "prefer-promise-reject-errors": 0, // require using Error objects as Promise rejection reasons (требуют использования объектов Error в качестве причин отказа от Promise)
     "require-await": 0, // disallow async functions which have no await expression (запретить асинхронные функции, которые не имеют ожидающего выражения)
-//    "wrap-iife": 0, // require parentheses around immediate function invocations (требуют скобок вокруг непосредственных вызовов функций)
+    //    "wrap-iife": 0, // require parentheses around immediate function invocations (требуют скобок вокруг непосредственных вызовов функций)
     "init-declarations": 0, // require or disallow initialization in var declarations (требовать или запрещать инициализацию в объявлениях var)
     "no-restricted-globals": 0, // disallow specified global variables (запретить указанные глобальные переменные)
     "global-require": 0, // require require() calls to be placed at top-level module scope (требуют require () вызовов для размещения в области модуля верхнего уровня)
@@ -304,12 +322,12 @@
     "no-confusing-arrow": 0, // disallow arrow functions where they could be confused with comparisons (запретить функции стрелок, где их можно путать со сравнением)
     "no-const-assign": 0, // disallow reassigning const variables (запретить переназначение константных переменных)
     "no-dupe-class-members": 0, // disallow duplicate class members (запретить дублирование членов класса)
-//    "no-duplicate-imports": 0, // disallow duplicate module imports (запретить дублировать импорты)
-//    "no-restricted-imports": 0, // disallow specified modules when loaded by import (запретить указанные модули при загрузке по импорту)
+    //    "no-duplicate-imports": 0, // disallow duplicate module imports (запретить дублировать импорты)
+    //    "no-restricted-imports": 0, // disallow specified modules when loaded by import (запретить указанные модули при загрузке по импорту)
     "no-this-before-super": 0, // disallow this/super before calling super() in constructors (запретить this/super перед вызовом super () в конструкторах)
     "no-useless-computed-key": 0, // disallow unnecessary computed property keys in object literals (запретить ненужные вычисленные ключи свойств в объектных литералах)
     "no-useless-constructor": 0, // disallow unnecessary constructors (запретить ненужные конструкторы)
-//    "no-useless-rename": 0, // disallow renaming import, export, and destructured assignments to the same name (запретить переименование импорта, экспорта и деструктурированных присвоений с тем же именем)
+    //    "no-useless-rename": 0, // disallow renaming import, export, and destructured assignments to the same name (запретить переименование импорта, экспорта и деструктурированных присвоений с тем же именем)
     "object-shorthand": 0, // require or disallow method and property shorthand syntax for object literals (требует или запрещает метод и свойство сокращенного синтаксиса для объектных литералов)
     "prefer-arrow-callback": 0, // require arrow functions as callbacks (требовать функции стрелок как обратные вызовы)
     "prefer-const": 0, // require const declarations for variables that are never reassigned after declared (требуют объявления const для переменных, которые никогда не переназначаются после объявления)
@@ -321,7 +339,7 @@
     "prefer-template": 0, // require template literals instead of string concatenation (требуют шаблонных литералов вместо конкатенации строк)
     "require-yield": 0, // require generator functions to contain yield (требуют, чтобы функции генератора содержали выход)
     "rest-spread-spacing": 0, // enforce spacing between rest and spread operators and their expressions (обеспечить соблюдение интервалов между операторами отдыха и распространения и их выражениями)
-//    "sort-imports": 0, // enforce sorted import declarations within modules (применять сортированные декларации импорта в рамках модулей)
+    //    "sort-imports": 0, // enforce sorted import declarations within modules (применять сортированные декларации импорта в рамках модулей)
     "symbol-description": 0, // require symbol descriptions (требуют описания символов)
     "template-curly-spacing": 0, // require or disallow spacing around embedded expressions of template strings (требовать или запрещать интервалы между встроенными выражениями строк шаблона)
     "yield-star-spacing": 0, // require or disallow spacing around the * in yield* expressions (требуют или запрещают интервалы между выражениями * в yield *)
