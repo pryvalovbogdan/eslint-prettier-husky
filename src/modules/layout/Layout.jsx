@@ -4,6 +4,7 @@ import { Wrapper, GlobalStyles, Title } from './styledComponents';
 
 const propTypes = {
   component: PropTypes.bool,
+  other: PropTypes.bool,
 };
 
 export const Layout = memo(props => {
