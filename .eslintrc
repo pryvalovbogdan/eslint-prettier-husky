@@ -2,7 +2,8 @@
 {
   "extends": [
     //    "airbnb",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:react/recommended"
     //    "prettier/babel",
     //    "prettier/react",
     //    "prettier/standard"
@@ -370,5 +371,11 @@
     "react/self-closing-comp": 1, // Prevent extra closing tags for components without children (Предотвращение дополнительных закрывающих тегов для компонентов без детей)
     "react/no-deprecated": 2, // This rule will warn you if you try to use a deprecated method (Это правило предупредит вас, если вы попытаетесь использовать устаревший метод)
     "react/no-children-prop": 0
+  },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "16.0"
+    },
   }
 }
