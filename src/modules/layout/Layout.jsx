@@ -3,7 +3,7 @@ import React, { memo } from 'react';
 import { Wrapper, GlobalStyles, Title } from './styledComponents';
 
 const propTypes = {
-  // sone: PropTypes.bool,
+  component: PropTypes.bool,
 };
 
 export const Layout = memo(props => {
