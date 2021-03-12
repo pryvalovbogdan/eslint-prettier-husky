@@ -34,18 +34,6 @@
   // 2 - turn the rule on as an error (exit code will be 1)
   "rules": {
     "prettier/prettier": "error",
-    //      {
-    //        "bracketSpacing": true,
-    //        "jsxBracketSameLine": false,
-    //        "jsxSingleQuote": false,
-    //        "printWidth": 100,
-    //        "semi": true,
-    //        "singleQuote": true,
-    //        "tabWidth": 2,
-    //        "trailingComma": "all",
-    //        "useTabs": false,
-    //        "endOfLine": "lf"
-    //      }
     // The following rules point out areas where you might have made mistakes.
     //    "comma-dangle": ["error", "always-multiline", {"functions": "never"}], // require or disallow trailing commas (требовать или запрещать запятые)
     "no-cond-assign": 2, // disallow assignment operators in conditional expressions (запретить операции присваивания в условных выражениях)
