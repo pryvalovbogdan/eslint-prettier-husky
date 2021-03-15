@@ -4,11 +4,10 @@ import { Wrapper, GlobalStyles, Title } from './styledComponents';
 
 const propTypes = {
   component: PropTypes.bool,
-  other: PropTypes.bool,
+  sone: PropTypes.bool,
 };
 
 export const Layout = memo(props => {
-  // eslint-disable-next-line react/prop-types
   const some = props?.sone;
 
   return (
