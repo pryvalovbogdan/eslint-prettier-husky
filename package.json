@@ -7,9 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode development --watch",
     "start": "webpack-dev-server --open --watch",
-    "lint": "yarn run lint:js",
-    "lint:js": "eslint src --ext .js --ext .jsx  --quiet",
-    "format": "prettier --write ."
+    "lint:fix": "git diff-index --name-only HEAD | grep -E \"(.*)\\.(jsx|js)\" | xargs node_modules/eslint/bin/eslint.js -c .eslintrc --fix"
   },
   "author": "",
   "license": "ISC",
@@ -66,8 +64,7 @@
   },
   "lint-staged": {
     "*.{js,jsx}": [
-      "eslint --fix",
-      "prettier --write",
+      "npm run lint:fix",
       "git add"
     ]
   },
