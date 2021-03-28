@@ -1,14 +1,10 @@
 // https://eslint.org/demo
 {
   "extends": [
-//     "airbnb",
     "plugin:prettier/recommended",
     "plugin:react/recommended"
-    //    "prettier/babel",
-    //    "prettier/react",
-    //    "prettier/standard"
   ],
-  "plugins": ["react", "prettier", "react-hooks"],
+  "plugins": ["prettier"],
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
@@ -29,9 +25,9 @@
     "expect": true,
     "itRenders": true
   },
-  // 0 - turn the rule off
-  // 1 - turn the rule on as a warning (doesn’t affect exit code)
-  // 2 - turn the rule on as an error (exit code will be 1)
+    // 0 - turn the rule off
+    // 1 - turn the rule on as a warning (doesn’t affect exit code)
+    // 2 - turn the rule on as an error (exit code will be 1)
   "rules": {
     "prettier/prettier": "error",
     // The following rules point out areas where you might have made mistakes.
@@ -202,7 +198,7 @@
     "max-len": [
       1,
       {
-        "code": 150,
+        "code": 100,
         "tabWidth": 2,
         "ignoreUrls": true,
         "ignoreTrailingComments": true,
@@ -364,6 +360,6 @@
     "react": {
       "pragma": "React",
       "version": "16.0"
-    },
+    }
   }
 }

@@ -39,12 +39,10 @@ export const GlobalStyles = createGlobalStyle`
 `;
 
 export const Wrapper = styled.div`
-  width: 100%;
-  height: 100vh;
   display: flex;
-  justify-content: center;
-  align-content: center;
+  align-items: center;
   flex-direction: column;
+  height: 100vh;
   background: #faf8ef;
   text-align: center;
   font-size: 25px;
@@ -55,3 +53,5 @@ export const Title = styled.h1`
   text-align: center;
   font-size: 25px;
 `;
+
+export const ResetButton = styled.button``;
