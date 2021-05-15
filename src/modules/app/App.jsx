@@ -8,6 +8,8 @@ import { NewsWrapper } from './components/styledComponents';
 import { selectorGetIsAppInit, selectorGetDataToDisplay } from './selectors';
 import { actionAppPageInit, actionAppPageReset } from './actions';
 import { NewsComponent } from './components/NewsComponent';
+import { Text } from '../../components';
+import { Flex } from '@modules';
 
 export const App = memo(() => {
   const dispatch = useDispatch();
@@ -40,6 +42,15 @@ export const App = memo(() => {
       <When condition={!!isLoaded}>
         <Title>{`Data state is: ${isLoaded}`}</Title>
       </When>
+      <Flex
+        width={1}
+        flexDirection='column'
+        pl={[0, 32]}
+        backgroundColor={['transparent', 'backgroundPrimary']}
+      >
+        Hey
+      </Flex>
+      <Text bold>Serega</Text>
       <ResetButton onClick={resetStore}>Reset store</ResetButton>
       <If condition={!!dataToDisplay.length}>
         <NewsWrapper>
@@ -48,7 +59,7 @@ export const App = memo(() => {
               key={item.name}
               title={item.name}
               url={item.url}
-              urlToImage={item.image.thumbnail.contentUrl}
+              urlToImage={item.image?.thumbnail?.contentUrl}
             />
           ))}
         </NewsWrapper>

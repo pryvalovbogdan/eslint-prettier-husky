@@ -17,5 +17,5 @@ export const NewsComponent = ({ url, title, urlToImage }) => (
 NewsComponent.propTypes = {
   url: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  urlToImage: PropTypes.string.isRequired,
+  urlToImage: PropTypes.string,
 };
