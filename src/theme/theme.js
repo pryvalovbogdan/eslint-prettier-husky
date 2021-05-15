@@ -161,6 +161,12 @@ export const colors = {
       lineGrid: palette.darkOrange,
       accentTransparent: palette.orangeTransparent,
     },
+    light: {
+      backgroundPrimary: 'orange',
+      backgroundSecondary: 'lightblue',
+      backgroundThird: 'purple',
+      accentSecondary: 'pink',
+    },
   },
   default: ['red'],
   ...palette,

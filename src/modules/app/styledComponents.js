@@ -20,6 +20,18 @@ export const GlobalStyles = createGlobalStyle`
     overflow: hidden;
   }
   
+  button {
+    font-family: Roboto, sans-serif;
+    font-size: ${globalFontSize}px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    border: none;
+    outline: none;
+    margin-top: 5px;
+  }
 
   input {
     border: none;
@@ -32,7 +44,7 @@ export const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
   height: 100vh;
-  //background: #faf8ef;
+  background: ${props => props.bg};
   text-align: center;
   font-size: 25px;
 `;

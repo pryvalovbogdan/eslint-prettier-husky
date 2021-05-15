@@ -1,8 +1,9 @@
-import { APP_INIT, APP_GET_DATA, APP_RESET } from './consts';
+import { APP_INIT, APP_GET_DATA, APP_RESET, APP_SET_ACTIVE_THEME } from './consts';
 
 export const initialState = {
   isLoaded: false,
   dataToDisplay: [],
+  activeTheme: 'dark',
 };
 
 export const appReducer = (state = initialState, action) => {
@@ -14,6 +15,9 @@ export const appReducer = (state = initialState, action) => {
 
     case APP_GET_DATA:
       return appDataToDisplaySet(state, payload);
+
+    case APP_SET_ACTIVE_THEME:
+      return appSetActiveTheme(state, payload);
 
     case APP_RESET:
       return { ...initialState };
@@ -29,4 +33,8 @@ function appInit(state, payload) {
 
 function appDataToDisplaySet(state, payload) {
   return { ...state, dataToDisplay: payload };
+}
+
+function appSetActiveTheme(state, payload) {
+  return { ...state, activeTheme: payload };
 }

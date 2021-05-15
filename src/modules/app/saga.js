@@ -28,15 +28,6 @@ export function* handleExamplePageInit() {
       },
     ).then(data => data.json());
 
-    //fetch("https://bing-news-search1.p.rapidapi.com/news?textFormat=Raw&safeSearch=Off", {
-    // 	"method": "GET",
-    // 	"headers": {
-    // 		"x-bingapis-sdk": "true",
-    // 		"x-rapidapi-key": "0f43282f67msh810940b1c85d876p1ae5a0jsnbfb9d6227f6c",
-    // 		"x-rapidapi-host": "bing-news-search1.p.rapidapi.com"
-    // 	}
-    // })
-    console.log('response', response);
     yield put(actionAppPageSetData(response.value || []));
     yield put(actionAppPageInit('Loaded'));
   } catch (error) {

@@ -3,12 +3,12 @@ import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { When, If } from 'react-if';
 
-import { Wrapper, GlobalStyles, Title, ResetButton } from './styledComponents';
+import { GlobalStyles, Title } from './styledComponents';
 import { NewsWrapper } from './components/styledComponents';
 import { selectorGetIsAppInit, selectorGetDataToDisplay } from './selectors';
-import { actionAppPageInit, actionAppPageReset } from './actions';
+import { actionAppPageInit, actionAppPageReset, actionAppSetActiveTheme } from './actions';
 import { NewsComponent } from './components/NewsComponent';
-import { Text } from '../../components';
+import { Box, Text, Button } from '../../components';
 import { Flex } from '@modules';
 
 export const App = memo(() => {
@@ -26,6 +26,13 @@ export const App = memo(() => {
     dispatch(actionAppPageReset());
   }, [dispatch]);
 
+  const setActiveTheme = useCallback(
+    theme => {
+      dispatch(actionAppSetActiveTheme(theme));
+    },
+    [dispatch],
+  );
+
   const pageInit = useCallback(() => {
     dispatch(actionAppPageInit());
   }, [dispatch]);
@@ -37,21 +44,28 @@ export const App = memo(() => {
   }, []);
 
   return (
-    <Wrapper>
+    <Flex bg={'backgroundThird'} flexDirection='column' alignItems='center'>
       <Title>App news</Title>
       <When condition={!!isLoaded}>
         <Title>{`Data state is: ${isLoaded}`}</Title>
       </When>
+      <select onChange={value => setActiveTheme(value.target.value)}>
+        <option value={'dark'}>dark</option>
+        <option value={'light'}>light</option>
+      </select>
       <Flex
-        width={1}
         flexDirection='column'
-        pl={[0, 32]}
-        backgroundColor={['transparent', 'backgroundPrimary']}
+        p={[0, 32]}
+        backgroundColor={'backgroundPrimary'}
+        alignItems='center'
+        justifyContent='center'
       >
-        Hey
+        <Box>Hey</Box>
       </Flex>
       <Text bold>Serega</Text>
-      <ResetButton onClick={resetStore}>Reset store</ResetButton>
+      <Button onClick={resetStore} bg={'accentSecondary'} borderRadius={2} p={10}>
+        Reset store
+      </Button>
       <If condition={!!dataToDisplay.length}>
         <NewsWrapper>
           {dataToDisplay.map(item => (
@@ -65,6 +79,6 @@ export const App = memo(() => {
         </NewsWrapper>
       </If>
       <GlobalStyles />
-    </Wrapper>
+    </Flex>
   );
 });

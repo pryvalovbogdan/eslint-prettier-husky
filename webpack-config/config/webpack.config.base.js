@@ -7,6 +7,7 @@ module.exports = () => {
   return {
     entry: {
       javascript: paths.JS_ENTRY,
+      // Will create "styles.css" in "css" dir.
       styles: paths.STYLES_ENTRY,
     },
     mode: 'development',
@@ -76,3 +77,4 @@ module.exports = () => {
     devtool: 'source-map',
   };
 };
+

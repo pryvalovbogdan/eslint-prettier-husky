@@ -9,3 +9,8 @@ export const selectorGetDataToDisplay = createSelector(
 );
 
 export const selectorGetIsAppInit = createSelector(selectorGetAppState, state => state.isLoaded);
+
+export const selectorGetActiveTheme = createSelector(
+  selectorGetAppState,
+  state => state.activeTheme,
+);
