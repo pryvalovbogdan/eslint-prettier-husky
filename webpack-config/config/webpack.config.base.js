@@ -2,15 +2,18 @@ const paths = require('../helpers/paths');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const env = require('../helpers/env');
 
 module.exports = () => {
+  console.log('env', env);
+  console.log('process.env', process.env);
   return {
     entry: {
       javascript: paths.JS_ENTRY,
       // Will create "styles.css" in "css" dir.
       styles: paths.STYLES_ENTRY,
     },
-    mode: 'development',
+    mode: env.getMode,
     module: {
       rules: [
         {
@@ -59,7 +62,7 @@ module.exports = () => {
     },
     devServer: {
       contentBase: paths.CONTENT_BASE,
-      port: 3000,
+      port: env.isDevMode ? 3000 : 2000,
       publicPath: 'http://localhost:3000/',
     },
     watch: true,
@@ -77,4 +80,3 @@ module.exports = () => {
     devtool: 'source-map',
   };
 };
-

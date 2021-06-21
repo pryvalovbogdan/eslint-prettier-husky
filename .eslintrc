@@ -209,7 +209,7 @@
     "max-statements": 0, // enforce a maximum number of statements allowed in function blocks (обеспечить максимальное количество утверждений, разрешенных в функциональных блоках)
     "no-bitwise": [1, { "int32Hint": true, "allow": ["~"] }], // disallow bitwise operators (запретить побитовые операторы)
     "no-plusplus": 0, // disallow the unary operators ++ and -- (запретить унарные операторы ++ и --)
-    "jsx-quotes": [2, "prefer-single"], // Enforce quote style for JSX attributes (Использовать стиль цитат для атрибутов JSX)
+    "jsx-quotes": [0, "prefer-single"], // Enforce quote style for JSX attributes (Использовать стиль цитат для атрибутов JSX)
     "arrow-spacing": [2, { "before": true, "after": true }], // enforce consistent spacing before and after the arrow in arrow functions (обеспечить согласованное расстояние до и после стрелки в стрелочках)
 
     // other rules:

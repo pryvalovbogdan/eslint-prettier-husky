@@ -44,7 +44,7 @@ export const App = memo(() => {
   }, []);
 
   return (
-    <Flex bg={'backgroundThird'} flexDirection='column' alignItems='center'>
+    <Flex bg={['backgroundThird']} flexDirection="column" alignItems="center">
       <Title>App news</Title>
       <When condition={!!isLoaded}>
         <Title>{`Data state is: ${isLoaded}`}</Title>
@@ -54,11 +54,11 @@ export const App = memo(() => {
         <option value={'light'}>light</option>
       </select>
       <Flex
-        flexDirection='column'
+        flexDirection="column"
         p={[0, 32]}
         backgroundColor={'backgroundPrimary'}
-        alignItems='center'
-        justifyContent='center'
+        alignItems="center"
+        justifyContent="center"
       >
         <Box>Hey</Box>
       </Flex>
