@@ -3,13 +3,14 @@ import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { When, If } from 'react-if';
 
-import { GlobalStyles, Title } from './styledComponents';
-import { NewsWrapper } from './components/styledComponents';
+import { Flex } from '@modules';
+import img from '@assets/mr_robot.0.jpg';
+
+import { GlobalStyles, Title, NewsWrapper } from './components/styled/styledComponents';
 import { selectorGetIsAppInit, selectorGetDataToDisplay } from './selectors';
 import { actionAppPageInit, actionAppPageReset, actionAppSetActiveTheme } from './actions';
 import { NewsComponent } from './components/NewsComponent';
 import { Box, Text, Button } from '../../components';
-import { Flex } from '@modules';
 
 export const App = memo(() => {
   const dispatch = useDispatch();
@@ -37,6 +38,13 @@ export const App = memo(() => {
     dispatch(actionAppPageInit());
   }, [dispatch]);
 
+  const gaEventHandle = useCallback(() => {
+    window.gtag('event', 'hey', {
+      event_category: 'access',
+      event_label: 'userName',
+    });
+  }, []);
+
   useEffect(() => {
     pageInit();
 
@@ -60,12 +68,13 @@ export const App = memo(() => {
         alignItems="center"
         justifyContent="center"
       >
-        <Box>Hey</Box>
+        <Box onClick={gaEventHandle}>Hey</Box>
       </Flex>
       <Text bold>Serega</Text>
       <Button onClick={resetStore} bg={'accentSecondary'} borderRadius={2} p={10}>
         Reset store
       </Button>
+      <img src={img} alt="mr robot" width={100} />
       <If condition={!!dataToDisplay.length}>
         <NewsWrapper>
           {dataToDisplay.map(item => (

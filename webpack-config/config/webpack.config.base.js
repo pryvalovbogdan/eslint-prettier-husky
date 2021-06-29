@@ -52,6 +52,7 @@ module.exports = () => {
       extensions: ['*', '.js', '.jsx'],
       alias: {
         '@modules': paths.MODULES_ALIAS,
+        '@assets': paths.ASSETS,
       },
     },
     output: {
@@ -69,7 +70,7 @@ module.exports = () => {
     plugins: [
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
-        template: './public/index.html',
+        template: paths.HTML_ENTRY,
         filename: 'index.html',
       }),
       new MiniCssExtractPlugin({

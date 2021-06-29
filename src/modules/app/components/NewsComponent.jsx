@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { NewsLink, NewsImage, NewsBlock } from './styledComponents';
+import { NewsLink, NewsImage, NewsBlock } from './styled/styledComponents';
 
 export const NewsComponent = ({ url, title, urlToImage }) => (
   <NewsBlock>

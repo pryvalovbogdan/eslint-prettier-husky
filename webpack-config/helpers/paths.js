@@ -17,5 +17,7 @@ module.exports = {
   OUTPUT: pathResolve('dist/'),
   CONTENT_BASE: pathResolve('public/'),
   MODULES_ALIAS: pathResolve('modules/'),
+  HTML_ENTRY: pathResolve('public/index.html'),
+  ASSETS: pathResolve('assets/'),
   pathResolve,
 };
