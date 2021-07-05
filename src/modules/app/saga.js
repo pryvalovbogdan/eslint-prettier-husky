@@ -3,6 +3,7 @@ import { APP_INIT } from './consts';
 
 import { selectorGetIsAppInit } from './selectors';
 import { actionAppPageSetData, actionAppPageInit } from './actions';
+import { httpGet } from '../../http/axiosConfig';
 
 export function* watchExamplePageSaga() {
   yield takeLatest(APP_INIT, handleExamplePageInit);
@@ -16,7 +17,7 @@ export function* handleExamplePageInit() {
   }
 
   try {
-    const response = yield fetch(
+    const response = yield httpGet(
       'https://bing-news-search1.p.rapidapi.com/news?textFormat=Raw&safeSearch=Off&category=Sports',
       {
         method: 'GET',
@@ -26,12 +27,12 @@ export function* handleExamplePageInit() {
           'x-rapidapi-host': 'bing-news-search1.p.rapidapi.com',
         },
       },
-    ).then(data => data.json());
+    ).then(data => data);
 
     yield put(actionAppPageSetData(response.value || []));
     yield put(actionAppPageInit('Loaded'));
   } catch (error) {
-    yield put(actionAppPageInit('Failed to load'));
     console.error(error);
+    yield put(actionAppPageInit('Failed to load'));
   }
 }
