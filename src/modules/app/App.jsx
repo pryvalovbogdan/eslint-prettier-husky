@@ -13,7 +13,7 @@ import { actionAppPageInit, actionAppPageReset, actionAppSetActiveTheme } from '
 import { Box, Text, Button } from '../../components';
 import { InputWithStylingSafariBar } from './components/InputWithStylingSafariBar';
 
-const NewsComponent = lazy(() => import('./components/NewsComponent'));
+const NewsComponent = lazy(() => import('./components/NewsComponent.tsx'));
 
 export const App = memo(() => {
   const dispatch = useDispatch();

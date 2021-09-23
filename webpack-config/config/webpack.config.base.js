@@ -22,6 +22,14 @@ module.exports = () => {
           loader: 'babel-loader',
           options: { presets: ['@babel/preset-react', '@babel/env', '@babel/preset-flow'] },
         },
+        // All files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'.
+        {
+          test: /\.(ts|tsx)$/,
+          use: {
+            loader: 'ts-loader',
+          },
+          exclude: /node_modules/,
+        },
         {
           test: /\.les$/,
           use: ['style-loader', 'css-loader', 'less-loader'],
@@ -85,7 +93,7 @@ module.exports = () => {
       ],
     },
     resolve: {
-      extensions: ['*', '.js', '.jsx'],
+      extensions: ['*', '.js', '.jsx', '.ts', '.tsx'],
       alias: {
         '@modules': paths.MODULES_ALIAS,
         '@assets': paths.ASSETS,
@@ -131,6 +139,8 @@ module.exports = () => {
         chunkFilename: '[id].[hash:8].css',
       }),
     ],
+
+    // Enable sourcemaps for debugging webpack's output.
     devtool: 'source-map',
   };
 };
