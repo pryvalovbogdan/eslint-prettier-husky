@@ -3,7 +3,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const env = require('../helpers/env');
-
+const fs = require('fs');
 module.exports = () => {
   console.log('env', env);
   console.log('process.env', process.env);
@@ -27,11 +27,34 @@ module.exports = () => {
           use: ['style-loader', 'css-loader', 'less-loader'],
         },
         {
-          test: /\.(png|svg|jpg|gif)$/i,
+          test: /\.(png|svg|jpg|gif|jpeg)$/i,
           loader: 'file-loader',
           options: {
             name: '[path][name].[ext]',
           },
+        },
+        {
+          test: /\.svg$/,
+          use: [
+            { loader: 'svg-sprite-loader' },
+            'svg-transform-loader',
+            'svgo-loader',
+            {
+              loader: 'file-loader',
+              options: {
+                name: '[name].[ext]',
+              },
+            },
+          ],
+        },
+        {
+          test: /\.css$/i,
+          use: [
+            // Creates `style` nodes from JS strings
+            'style-loader',
+            // Translates CSS into CommonJS
+            'css-loader',
+          ],
         },
         {
           test: /\.scss$/,
@@ -44,6 +67,19 @@ module.exports = () => {
               },
             },
             'sass-loader',
+          ],
+        },
+        {
+          test: /\.(woff|woff2|eot|ttf|otf)$/i,
+          // type: 'asset/resource',
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: '[name].[ext]',
+                outputPath: 'fonts/',
+              },
+            },
           ],
         },
       ],
@@ -63,8 +99,25 @@ module.exports = () => {
     },
     devServer: {
       contentBase: paths.CONTENT_BASE,
-      port: env.isDevMode ? 3000 : 2000,
-      publicPath: 'http://localhost:3000/',
+      // port: env.isDevMode ? 3000 : 2000,
+      publicPath: '/',
+      https: {
+        key: fs.readFileSync('/Users/bogdan/key.pem'),
+        cert: fs.readFileSync('/Users/bogdan/cert.pem'),
+        ca: fs.readFileSync('./create-ca-key.pem'),
+      },
+      proxy: {
+        '/': {
+          target: {
+            host: 'dev.clearslideng.com',
+            protocol: 'https:',
+            port: 8080,
+          },
+          pathRewrite: {
+            '^/localhost': '',
+          },
+        },
+      },
     },
     watch: true,
     plugins: [

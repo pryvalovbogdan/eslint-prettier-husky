@@ -11,6 +11,7 @@ import {
   flexbox,
   system,
   compose,
+  background,
 } from 'styled-system';
 
 const styleProps = compose(
@@ -22,6 +23,7 @@ const styleProps = compose(
   border,
   shadow,
   flexbox,
+  background,
   system({
     visibility: true,
     wordWrap: true,

@@ -94,6 +94,7 @@ const coralTransparent = [
   'rgb(64, 172, 173, 0.25)', //  0
 ];
 const yellow = '#D6AA54';
+const blueGradient = 'linear-gradient(to top, #051937, #064268, #007099, #00a2c5, #12d6eb);';
 
 const palette = {
   darkBlue,
@@ -119,6 +120,7 @@ const palette = {
   coralGreenGradient,
   orangeGreenGradient,
   yellow,
+  blueGradient,
 };
 
 export const colors = {
@@ -126,7 +128,7 @@ export const colors = {
     dark: {
       backgroundPrimary: palette.darkBlue[1],
       backgroundSecondary: palette.darkBlue[2],
-      backgroundThird: palette.darkBlue[4],
+      backgroundThird: blueGradient,
       backgroundFourth: palette.darkBlue[3],
       backgroundFive: palette.darkBlue[6],
       backgroundSix: palette.darkBlue[8],

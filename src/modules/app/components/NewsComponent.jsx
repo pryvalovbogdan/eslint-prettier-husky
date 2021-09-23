@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { NewsLink, NewsImage, NewsBlock } from './styled/styledComponents';
 
-export const NewsComponent = ({ url, title, urlToImage }) => (
+const NewsComponent = ({ url, title, urlToImage }) => (
   <NewsBlock>
     <NewsLink href={url} target={'blank'}>
       <NewsImage src={urlToImage} alt={'Image haven"t downloaded'} />
@@ -19,3 +19,5 @@ NewsComponent.propTypes = {
   title: PropTypes.string.isRequired,
   urlToImage: PropTypes.string,
 };
+
+export default NewsComponent;
