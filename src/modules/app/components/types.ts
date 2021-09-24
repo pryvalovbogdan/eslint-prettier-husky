@@ -1,5 +1,5 @@
 export interface INewsComponentProps {
-  url?: string;
-  title?: string;
+  url: string;
+  title: string;
   urlToImage?: string;
 }

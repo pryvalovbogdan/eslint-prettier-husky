@@ -1,4 +1,5 @@
 import { APP_INIT, APP_GET_DATA, APP_RESET, APP_SET_ACTIVE_THEME } from './consts';
+import { AnyAction } from 'redux';
 
 export const initialState = {
   isLoaded: false,
@@ -6,7 +7,12 @@ export const initialState = {
   activeTheme: 'dark',
 };
 
-export const appReducer = (state = initialState, action) => {
+export type InitialStateType = typeof initialState;
+
+export const appReducer = (
+  state: InitialStateType = initialState,
+  action: AnyAction,
+): InitialStateType => {
   const { type, payload } = action;
 
   switch (type) {

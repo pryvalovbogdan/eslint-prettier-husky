@@ -13,7 +13,7 @@ import { actionAppPageInit, actionAppPageReset, actionAppSetActiveTheme } from '
 import { Box, Text, Button } from '../../components';
 import { InputWithStylingSafariBar } from './components/InputWithStylingSafariBar';
 
-const NewsComponent = lazy(() => import('./components/NewsComponent.tsx'));
+const NewsComponent = lazy(() => import('./components/NewsComponent'));
 
 export const App = memo(() => {
   const dispatch = useDispatch();
@@ -73,9 +73,10 @@ export const App = memo(() => {
         <option value={'light'}>light</option>
       </select>
       <Flex
-        flexDirection="column"
+        flexDirection={['column', 'row']}
+        id={'test'}
         p={[0, 32]}
-        backgroundColor={'backgroundPrimary'}
+        backgroundColor={['backgroundPrimary', 'backgroundSecondary']}
         alignItems="center"
         justifyContent="center"
       >

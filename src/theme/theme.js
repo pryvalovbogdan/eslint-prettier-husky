@@ -128,7 +128,7 @@ export const colors = {
     dark: {
       backgroundPrimary: palette.darkBlue[1],
       backgroundSecondary: palette.darkBlue[2],
-      backgroundThird: blueGradient,
+      backgroundThird: palette.darkBlue[4],
       backgroundFourth: palette.darkBlue[3],
       backgroundFive: palette.darkBlue[6],
       backgroundSix: palette.darkBlue[8],

@@ -5,7 +5,7 @@ import { NewsLink, NewsImage, NewsBlock } from './styled/styledComponents';
 
 import { INewsComponentProps } from './types';
 
-export const NewsComponent: FC<INewsComponentProps> = memo(({ url, title, urlToImage }) => (
+const NewsComponent: FC<INewsComponentProps> = memo(({ url, title, urlToImage }) => (
   <NewsBlock>
     <NewsLink href={url} target={'blank'}>
       <NewsImage src={urlToImage} alt={'Image haven"t downloaded'} />
@@ -21,3 +21,5 @@ NewsComponent.propTypes = {
   title: PropTypes.string.isRequired,
   urlToImage: PropTypes.string,
 };
+
+export default NewsComponent;

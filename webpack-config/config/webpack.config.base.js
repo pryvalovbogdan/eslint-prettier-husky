@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const env = require('../helpers/env');
 const fs = require('fs');
+
 module.exports = () => {
   console.log('env', env);
   console.log('process.env', process.env);
@@ -107,7 +108,7 @@ module.exports = () => {
     },
     devServer: {
       contentBase: paths.CONTENT_BASE,
-      // port: env.isDevMode ? 3000 : 2000,
+      port: 8090,
       publicPath: '/',
       https: {
         key: fs.readFileSync('/Users/bogdan/key.pem'),
@@ -117,9 +118,9 @@ module.exports = () => {
       proxy: {
         '/': {
           target: {
-            host: 'dev.clearslideng.com',
+            // host: 'dev.clearslideng.com',
             protocol: 'https:',
-            port: 8080,
+            port: 8090,
           },
           pathRewrite: {
             '^/localhost': '',
@@ -133,6 +134,7 @@ module.exports = () => {
       new HtmlWebpackPlugin({
         template: paths.HTML_ENTRY,
         filename: 'index.html',
+        favicon: `${paths.ASSETS}/favicon.png`,
       }),
       new MiniCssExtractPlugin({
         filename: '[name].[hash:8].css',
