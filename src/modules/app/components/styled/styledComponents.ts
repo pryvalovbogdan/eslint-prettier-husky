@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
+import { typeGlobalProps, typeWrapperProps } from './types';
 
 const globalFontSize = 16;
 
-export const GlobalStyles = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle<typeGlobalProps>`
   body {
   width: 100%;
   height: 100vh;
@@ -39,7 +40,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 `;
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<typeWrapperProps>`
   display: flex;
   align-items: center;
   flex-direction: column;
