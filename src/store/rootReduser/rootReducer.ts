@@ -1,11 +1,14 @@
-import { combineReducers } from 'redux';
+import { combineReducers, Reducer, AnyAction } from 'redux';
+
 import { appReducer } from '../../modules/app';
 
-const allReducers = combineReducers({
+import { IApplicationState } from './types';
+
+const allReducers: Reducer = combineReducers<IApplicationState>({
   app: appReducer,
 });
 
-export const rootReducer = (state, action) => {
+export const rootReducer = (state: IApplicationState, action: AnyAction) => {
   return allReducers(state, action);
 };
 
