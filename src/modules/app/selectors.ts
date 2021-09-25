@@ -1,7 +1,8 @@
 import { createSelector } from 'reselect';
 import { initialState } from './reducer';
+import { RootState } from '../../store/rootReduser/rootReducer';
 
-export const selectorGetAppState = state => state.app || initialState;
+export const selectorGetAppState = (state: RootState): any => state.app || initialState;
 
 export const selectorGetDataToDisplay = createSelector(
   selectorGetAppState,

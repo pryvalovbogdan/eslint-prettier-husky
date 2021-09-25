@@ -5,8 +5,8 @@ const allReducers = combineReducers({
   app: appReducer,
 });
 
-const rootReducer = (state, action) => {
+export const rootReducer = (state, action) => {
   return allReducers(state, action);
 };
 
-export default rootReducer;
+export type RootState = ReturnType<typeof rootReducer>;
