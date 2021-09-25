@@ -3,7 +3,7 @@ import { APP_INIT } from './consts';
 
 import { selectorGetIsAppLoaded } from './selectors';
 import { actionAppPageSetData, actionAppPageInit } from './actions';
-import { httpGet } from '../../http/axiosConfig';
+import { httpGet } from '../../http/axiosConfig.js';
 
 export function* watchExamplePageSaga() {
   yield takeLatest(APP_INIT, handleExamplePageInit);

@@ -3,6 +3,6 @@ export {};
 
 declare global {
   interface Window {
-    gtag: any;
+    gtag: (action: string, field: string, value?: string) => void;
   }
 }

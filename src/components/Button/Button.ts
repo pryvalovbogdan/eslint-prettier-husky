@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import styledPropTypes from '@styled-system/prop-types';
+import { ButtonProps } from './types';
 
 import {
   layout,
@@ -40,7 +41,7 @@ const styleProps = compose(
   }),
 );
 
-export const Button = styled.button`
+export const Button = styled.button<ButtonProps>`
   cursor: pointer;
 
   &:focus {

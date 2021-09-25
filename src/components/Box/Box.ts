@@ -13,6 +13,7 @@ import {
   compose,
   background,
 } from 'styled-system';
+import { BoxProps } from './types';
 
 const styleProps = compose(
   space,
@@ -36,7 +37,7 @@ const styleProps = compose(
   }),
 );
 
-export const Box = styled.div(styleProps);
+export const Box = styled.div<BoxProps>(styleProps);
 
 Box.displayName = 'Box';
 
