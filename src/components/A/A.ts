@@ -1,9 +1,9 @@
 import { memo } from 'react';
 import styled from 'styled-components';
 import { space, color, typography, layout, compose, system } from 'styled-system';
-import { AProps } from './types';
+import { IAProps } from './types';
 
-export const A = memo<AProps>(
+export const A = memo<IAProps>(
   styled.a(
     compose(
       typography,

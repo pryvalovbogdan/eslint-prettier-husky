@@ -12,7 +12,7 @@ import {
   PositionProps,
 } from 'styled-system';
 
-export interface BoxProps
+export interface IBoxProps
   extends BackgroundProps,
     LayoutProps,
     ColorProps,

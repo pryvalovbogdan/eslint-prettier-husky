@@ -1,8 +1,8 @@
-const paths = require('../helpers/paths');
+const paths = require('../helpers/paths.ts');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const env = require('../helpers/env');
+const env = require('../helpers/env.ts');
 const fs = require('fs');
 
 module.exports = () => {

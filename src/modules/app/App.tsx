@@ -9,7 +9,7 @@ import { colors } from '../../theme/theme';
 
 import { GlobalStyles, Title, NewsWrapper } from './components/styled/styledComponents';
 import { selectorGetIsAppLoaded, selectorGetDataToDisplay } from './selectors';
-import { IAppIsLoaded, IAppDataToDisplay } from './types/selectorsTypes';
+import { TypeAppIsLoaded, TypeAppDataToDisplay } from './types/selectorsTypes';
 import { actionAppPageInit, actionAppPageReset, actionAppSetActiveTheme } from './actions';
 import { Box, Text, Button } from '../../components';
 import { InputWithStylingSafariBar } from './components/InputWithStylingSafariBar';
@@ -20,7 +20,7 @@ export const App = memo(() => {
   const dispatch = useDispatch();
 
   const { isLoaded, dataToDisplay } = useSelector(
-    createStructuredSelector<IAppIsLoaded, IAppDataToDisplay>({
+    createStructuredSelector<TypeAppIsLoaded, TypeAppDataToDisplay>({
       isLoaded: selectorGetIsAppLoaded,
       dataToDisplay: selectorGetDataToDisplay,
     }),

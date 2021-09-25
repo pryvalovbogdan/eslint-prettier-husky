@@ -11,7 +11,7 @@ import {
   FlexboxProps,
 } from 'styled-system';
 
-export interface ButtonProps
+export interface IButtonProps
   extends BackgroundProps,
     LayoutProps,
     ColorProps,
