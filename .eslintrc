@@ -128,7 +128,10 @@
     "no-global-assign": 1, // disallow assignments to native objects or read-only global variables (запретить присваивания собственным объектам или глобальным переменным только для чтения)
     "no-undef-init": 2, // disallow initializing variables to "undefined" (запретить инициализацию переменных в "undefined")
     "no-undefined": 1, // disallow the use of undefined as an identifier (запретить использование undefined как идентификатора)
-    "no-unused-vars": 2, // disallow unused variables (запретить неиспользуемые переменные)
+    "no-unused-vars": [2, {
+      "vars": "all",
+      "varsIgnorePattern": "[I]\\w+"
+    }], // disallow unused variables (запретить неиспользуемые переменные)
     "no-use-before-define": 0, // disallow the use of variables before they are defined (запретить использование переменных до их определения)
 
     // These rules are purely matters of style and are quite subjective.

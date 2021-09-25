@@ -8,7 +8,7 @@ export const selectorGetDataToDisplay = createSelector(
   state => state.dataToDisplay,
 );
 
-export const selectorGetIsAppInit = createSelector(selectorGetAppState, state => state.isLoaded);
+export const selectorGetIsAppLoaded = createSelector(selectorGetAppState, state => state.isLoaded);
 
 export const selectorGetActiveTheme = createSelector(
   selectorGetAppState,

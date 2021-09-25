@@ -3,12 +3,13 @@ import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { When, If } from 'react-if';
 
-import { Flex } from '@modules';
-import img from '@assets/mr_robot.0.jpg';
+import { Flex } from 'modules/Flex';
+import img from 'assets/mr_robot.0.jpg';
 import { colors } from '../../theme/theme';
 
 import { GlobalStyles, Title, NewsWrapper } from './components/styled/styledComponents';
-import { selectorGetIsAppInit, selectorGetDataToDisplay } from './selectors';
+import { selectorGetIsAppLoaded, selectorGetDataToDisplay } from './selectors';
+import { IAppIsLoaded, IAppDataToDisplay } from './types/selectorsTypes';
 import { actionAppPageInit, actionAppPageReset, actionAppSetActiveTheme } from './actions';
 import { Box, Text, Button } from '../../components';
 import { InputWithStylingSafariBar } from './components/InputWithStylingSafariBar';
@@ -19,8 +20,8 @@ export const App = memo(() => {
   const dispatch = useDispatch();
 
   const { isLoaded, dataToDisplay } = useSelector(
-    createStructuredSelector({
-      isLoaded: selectorGetIsAppInit,
+    createStructuredSelector<IAppIsLoaded, IAppDataToDisplay>({
+      isLoaded: selectorGetIsAppLoaded,
       dataToDisplay: selectorGetDataToDisplay,
     }),
     shallowEqual,
@@ -38,7 +39,7 @@ export const App = memo(() => {
   );
 
   const pageInit = useCallback(() => {
-    dispatch(actionAppPageInit());
+    dispatch(actionAppPageInit(''));
   }, [dispatch]);
 
   const gaEventHandle = useCallback(() => {

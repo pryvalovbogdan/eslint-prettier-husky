@@ -12,7 +12,7 @@ module.exports = {
   SRC_DIR: pathResolve('src'),
   BUILD_DIR: pathResolve('dist'),
   PUBLIC_DIR: pathResolve('public'),
-  JS_ENTRY: pathResolve('src/index.js'),
+  JS_ENTRY: pathResolve('src/index'),
   STYLES_ENTRY: pathResolve('style/style.scss'),
   OUTPUT: pathResolve('dist/'),
   CONTENT_BASE: pathResolve('public/'),

@@ -1,14 +1,14 @@
-import React, { useState, useRef, useCallback, useEffect } from 'react';
-import { Flex } from '@modules/Flex';
+import React, { useState, useRef, useCallback, useEffect, ReactElement } from 'react';
+import { Flex } from 'modules/Flex';
 import { Text } from '../../../components';
 
-export const InputWithStylingSafariBar = () => {
+export const InputWithStylingSafariBar = (): ReactElement => {
   const inputRef = useRef(null);
 
-  const safariBar = document.querySelector('meta[name="theme-color"]');
+  const safariBar = document.querySelector<HTMLElement>('meta[name="theme-color"]');
 
-  const [message, setMessage] = useState('');
-  const [color, setColor] = useState('');
+  const [message, setMessage] = useState<string>('');
+  const [color, setColor] = useState<string>('');
 
   const isEmptyBtnHandle = useCallback(() => {
     if (inputRef.current.value) {

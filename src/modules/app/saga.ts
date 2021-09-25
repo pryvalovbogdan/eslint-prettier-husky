@@ -1,7 +1,7 @@
 import { takeLatest, put, select } from 'redux-saga/effects';
 import { APP_INIT } from './consts';
 
-import { selectorGetIsAppInit } from './selectors';
+import { selectorGetIsAppLoaded } from './selectors';
 import { actionAppPageSetData, actionAppPageInit } from './actions';
 import { httpGet } from '../../http/axiosConfig';
 
@@ -10,7 +10,7 @@ export function* watchExamplePageSaga() {
 }
 
 export function* handleExamplePageInit() {
-  const isLoaded = yield select(selectorGetIsAppInit);
+  const isLoaded = yield select(selectorGetIsAppLoaded);
 
   if (isLoaded) {
     return;

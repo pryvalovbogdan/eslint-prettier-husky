@@ -2,7 +2,13 @@
   "compilerOptions": {
     "target": "ES5",
     "jsx": "react",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "baseUrl": "./",
+    "paths": "To add aliases to typescript",
+    "paths": {
+      "modules": ["modules/"],
+      "assets": ["assets/"]
+    }
   },
   "exclude": [
     "node_modules"

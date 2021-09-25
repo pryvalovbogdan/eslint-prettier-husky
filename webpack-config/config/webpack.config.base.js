@@ -96,8 +96,8 @@ module.exports = () => {
     resolve: {
       extensions: ['*', '.js', '.jsx', '.ts', '.tsx'],
       alias: {
-        '@modules': paths.MODULES_ALIAS,
-        '@assets': paths.ASSETS,
+        modules: paths.MODULES_ALIAS,
+        assets: paths.ASSETS,
       },
     },
     output: {

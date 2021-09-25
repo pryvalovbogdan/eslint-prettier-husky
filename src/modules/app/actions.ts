@@ -1,5 +1,5 @@
 import { APP_INIT, APP_RESET, APP_GET_DATA, APP_SET_ACTIVE_THEME } from './consts';
-import { IAppPageInit, IAppReset, IAppGetData, IAppSetActiveTheme } from './types/actions';
+import { IAppPageInit, IAppReset, IAppGetData, IAppSetActiveTheme } from './types/actionsTypes';
 
 export const actionAppPageInit = (payload: string): IAppPageInit => ({ type: APP_INIT, payload });
 
